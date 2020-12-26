@@ -12,21 +12,19 @@ app.use((req, res, next) => {
 app.use('/api/sauces', (req, res, next) => {
   const sauces = [
     {
-      _id: 'oeihfzeoi',
-      title: 'Mon premier objet',
-      description: 'Les infos de mon premier objet',
-      imageUrl: 'https://cdn.pixabay.com/photo/2019/06/11/18/56/camera-4267692_1280.jpg',
-      price: 4900,
+      id: 'oeihfzeoi',
       userId: 'qsomihvqios',
-    },
-    {
-      _id: 'oeihfzeomoihi',
-      title: 'Mon deuxième objet',
-      description: 'Les infos de mon deuxième objet',
-      imageUrl: 'https://cdn.pixabay.com/photo/2019/06/11/18/56/camera-4267692_1280.jpg',
-      price: 2900,
-      userId: 'qsomihvqios',
-    },
+      name: 'test',
+      manufacturer: 'ssss',
+      description: 'Ceci est une sauce',
+      mainPepper: 'Piquante',
+      imageUrl: 'https://pixabay.com/fr/photos/poivrons-l%C3%A9gumes-alimentaire-421087/',
+      heat: 2,
+      likes: 12,
+      dislikes: 4,
+      usersLiked: 'testUser',
+      usersDisliked: 'testUser2'
+    }
   ];
   res.status(200).json(sauces);
 });
