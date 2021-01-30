@@ -84,7 +84,6 @@ exports.getAllSauces = (req, res, next) => {
         }));
 };
 
-///////
 exports.likeSauce = (req, res, next) => {
     console.log(req.body);
     Sauce.findOne({

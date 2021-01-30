@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
+const helmet = require('helmet');
 
 const saucesRoutes = require('./routes/sauces');
 const userRoutes = require('./routes/user');
@@ -16,6 +17,13 @@ mongoose.connect('mongodb+srv://'+process.env.MONGODB_USERNAME+':'+process.env.M
     .catch(() => console.log('Connexion à MongoDB échouée !'));
 
 const app = express();
+
+//Helmet - éviter les injections
+app.use(
+  helmet({
+    referrerPolicy: { policy: "no-referrer" },
+  })
+);
 
 //Possibilité de "connexion" entre les deux localhost 3000 et 4200
 app.use((req, res, next) => {
